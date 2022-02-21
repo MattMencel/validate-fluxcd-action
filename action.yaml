@@ -1,0 +1,12 @@
+name: "Validate FluxCD"
+description: "Validate FluxCD Multi-Tenant"
+inputs:
+  k8s-target:
+    description: "K8S target version to run kubepug against."
+    required: true
+    default: "1.20.9"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.k8s-version }}
