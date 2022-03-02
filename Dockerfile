@@ -1,6 +1,6 @@
 FROM ghcr.io/stefanprodan/kube-tools:v1.7.1
 
-#RUN apk add --update --no-cache curl yq
+RUN curl -sL https://github.com/rikatz/kubepug/releases/download/v1.3.2/kubepug_linux_amd64.tar.gz | tar zxf - -C /bin
 
 COPY entrypoint.sh /entrypoint.sh
 
