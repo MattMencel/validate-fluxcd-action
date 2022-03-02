@@ -46,14 +46,14 @@ find . -type f -name $kustomize_config -print0 | while IFS= read -r -d $'\0' fil
   fi
 done
 
-kubepug_flags="--error-on-deprecated --error-on-deleted --k8s-version ${K8S_TARGET_VERSION} --input-file /dev/stdin"
+# kubepug_flags="--error-on-deprecated --error-on-deleted --k8s-version ${K8S_TARGET_VERSION} --input-file /dev/stdin"
 
-echo "INFO - Deprecations in kustomize overlays"
-find . -type f -name $kustomize_config -print0 | while IFS= read -r -d $'\0' file; do
-  echo "INFO - Deprecation check on kustomization ${file/%$kustomize_config/}"
-  kustomize build "${file/%$kustomize_config/}" $kustomize_flags |
-    kubepug $kubepug_flags
-  if [[ ${PIPESTATUS[0]} != 0 ]]; then
-    exit 1
-  fi
-done
+# echo "INFO - Deprecations in kustomize overlays"
+# find . -type f -name $kustomize_config -print0 | while IFS= read -r -d $'\0' file; do
+#   echo "INFO - Deprecation check on kustomization ${file/%$kustomize_config/}"
+#   kustomize build "${file/%$kustomize_config/}" $kustomize_flags |
+#     kubepug $kubepug_flags
+#   if [[ ${PIPESTATUS[0]} != 0 ]]; then
+#     exit 1
+#   fi
+# done
