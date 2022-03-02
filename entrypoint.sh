@@ -1,5 +1,6 @@
 #!/bin/sh -l
 
+
 # This script downloads the Flux OpenAPI schemas, then it validates the
 # Flux custom resources and the kustomize overlays using kubeconform.
 
